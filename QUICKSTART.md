@@ -17,7 +17,7 @@ flutter pub get
 flutter run -d macos
 ```
 
-That's it! HyperFrame is now running with an iPhone 13 Pro Max simulation.
+That's it! HyperFrame is now running with an iPhone 16 Pro Max simulation.
 
 ---
 
@@ -47,7 +47,7 @@ Open `lib/main.dart` around line 38:
 
 ```dart
 // Change this line:
-defaultDevice: Devices.ios.iPhone13ProMax,
+defaultDevice: Devices.ios.iPhone16ProMax,
 
 // To one of these:
 defaultDevice: Devices.android.pixel6,           // Pixel 6
@@ -179,4 +179,4 @@ You're now running HyperFrame with 10x faster development speed!
 
 ---
 
-**Questions?** Open an issue at: https://github.com/yourusername/hyperframe/issues
+**Questions?** Open an issue at: https://github.com/aeTunga/hyperframe/issues

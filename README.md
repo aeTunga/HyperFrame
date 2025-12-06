@@ -57,7 +57,7 @@ flutter pub get
 flutter run -d macos
 ```
 
-That's it! HyperFrame will launch with an iPhone 13 Pro Max simulation by default.
+That's it! HyperFrame will launch with an iPhone 16 Pro Max simulation by default.
 
 ---
 
@@ -70,7 +70,7 @@ Want to test on a different device? It's incredibly simple:
 
 ```dart
 // Line ~38 in lib/main.dart
-defaultDevice: Devices.ios.iPhone13ProMax,          // Current (iPhone)
+defaultDevice: Devices.ios.iPhone16ProMax,          // Current (iPhone)
 // defaultDevice: Devices.android.pixel6,           // Uncomment for Pixel 6
 // defaultDevice: Devices.ios.iPad12InchGen4,       // Uncomment for iPad
 // defaultDevice: Devices.android.samsungGalaxyS20, // Uncomment for Samsung
