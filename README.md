@@ -53,7 +53,10 @@ cd HyperFrame
 # 2. Get dependencies
 flutter pub get
 
-# 3. Run on macOS (or your desktop platform)
+# 3. Generate Riverpod code (REQUIRED - run after every git pull!)
+dart run build_runner build --delete-conflicting-outputs
+
+# 4. Run on macOS (or your desktop platform)
 flutter run -d macos
 ```
 

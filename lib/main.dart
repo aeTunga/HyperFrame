@@ -2,26 +2,34 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:device_preview/device_preview.dart';
 
+import 'core/init/app_initializer.dart';
 import 'core/utils/platform_utils.dart';
 import 'app.dart';
 
 /// HyperFrame Entry Point
 ///
-/// Smart Runner Logic:
+/// **Smart Runner Logic:**
+/// - Initializes all core services (cache, network, logging)
 /// - Detects platform (macOS, Windows, Linux)
 /// - In DEBUG mode on DESKTOP: Enables DevicePreview simulation
 /// - In RELEASE mode or MOBILE: Runs standard Flutter app
 ///
-/// This approach ensures:
+/// **This approach ensures:**
 /// ⚡️ 10x faster development on desktop (no emulator overhead)
 /// 📱 Zero performance impact on production builds
 /// 🔋 Saves battery by avoiding heavy virtualization
+/// 🏗️ Proper initialization of all services before app starts
 ///
-/// Architecture:
-/// - Uses Riverpod's ProviderScope as the root widget
-/// - Maintains DevicePreview wrapper for desktop simulation
-/// - Uses GoRouter for declarative navigation
-void main() {
+/// **Architecture:**
+/// - AppInitializer sets up CacheManager, NetworkManager, and error handlers
+/// - Riverpod's ProviderScope provides state management
+/// - DevicePreview wrapper for desktop device simulation
+/// - GoRouter for declarative navigation
+/// - Clean Architecture with feature-first structure
+Future<void> main() async {
+  // Initialize all core services
+  await AppInitializer.initialize();
+
   final bool enableSimulator = PlatformUtils.shouldEnableSimulation;
 
   if (enableSimulator) {
