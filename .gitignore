@@ -35,6 +35,21 @@ migrate_working_dir/
 /build/
 /coverage/
 
+# Code generation (build_runner, Riverpod, Freezed, etc.)
+# Generated files should be regenerated on each machine
+*.g.dart
+*.freezed.dart
+*.gr.dart
+**/*.g.dart
+**/*.freezed.dart
+**/*.gr.dart
+
+# build_runner cache
+.dart_tool/build/
+
+# Conflict resolution files
+*.conflicts
+
 # Symbolication related
 app.*.symbols
 

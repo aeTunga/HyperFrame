@@ -1,23 +1,30 @@
 # 🚀 HyperFrame Quick Start Guide
 
-Welcome to HyperFrame! This guide will get you up and running in under 5 minutes.
+Welcome to HyperFrame with **Feature-First Clean Architecture**! This guide will get you up and running in under 5 minutes.
 
 ---
 
-## ⚡️ Installation (3 Commands)
+## ⚡️ Installation (4 Commands)
+
+> **⚠️ IMPORTANT**: After cloning or pulling changes, you MUST regenerate code files!
 
 ```bash
 # 1. Navigate to the project
 cd /Users/admin/Code/HyperFrame
 
-# 2. Get dependencies (if not already done)
+# 2. Get dependencies
 flutter pub get
 
-# 3. Run on macOS
+# 3. Generate Riverpod code (REQUIRED - run after every git pull!)
+dart run build_runner build --delete-conflicting-outputs
+
+# 4. Run on macOS
 flutter run -d macos
 ```
 
-That's it! HyperFrame is now running with an iPhone 16 Pro Max simulation.
+**Note**: Generated files (`*.g.dart`) are not tracked in git. Step 3 is mandatory after cloning or pulling changes.
+
+That's it! HyperFrame is now running with an iPhone 16 Pro Max simulation and Riverpod state management.
 
 ---
 
@@ -156,18 +163,20 @@ flutter run -d macos
 
 Now that you're running, try:
 
-1. **Modify the UI** - Change colors in `lib/theme/app_theme.dart`
-2. **Add a screen** - Create new screens in `lib/screens/`
-3. **Test layouts** - Add responsive widgets in `lib/widgets/`
-4. **Build features** - Implement your app logic!
+1. **Modify the UI** - Change colors in `lib/core/theme/app_theme.dart`
+2. **Add a feature** - Create new features in `lib/features/`
+3. **Test layouts** - Add responsive widgets in `lib/shared/widgets/`
+4. **Learn the architecture** - Read `ARCHITECTURE.md` for detailed guide
+5. **Build features** - Implement your app logic with Riverpod!
 
 ---
 
 ## 📚 Learn More
 
+- **Architecture Guide:** See `ARCHITECTURE.md` (comprehensive guide)
 - **Full Documentation:** See `README.md`
 - **Contributing:** See `CONTRIBUTING.md`
-- **Architecture:** Check code comments in `lib/main.dart`
+- **Code Examples:** Check `lib/features/` for real implementations
 
 ---
 

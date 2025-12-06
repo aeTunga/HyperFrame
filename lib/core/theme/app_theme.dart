@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-// Light Theme Configuration
+/// Light Theme Configuration
+///
+/// Modern Material 3 theme with Indigo as the primary color.
+/// Uses Google's Inter font family for consistent typography.
 final ThemeData lightTheme = ThemeData(
   useMaterial3: true,
   brightness: Brightness.light,
@@ -22,9 +25,16 @@ final ThemeData lightTheme = ThemeData(
       color: Colors.black87,
     ),
   ),
+  floatingActionButtonTheme: FloatingActionButtonThemeData(
+    elevation: 2,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+  ),
 );
 
-// Dark Theme Configuration
+/// Dark Theme Configuration
+///
+/// Modern Material 3 dark theme with Indigo as the primary color.
+/// Optimized for OLED displays with true blacks.
 final ThemeData darkTheme = ThemeData(
   useMaterial3: true,
   brightness: Brightness.dark,
@@ -44,5 +54,9 @@ final ThemeData darkTheme = ThemeData(
       fontWeight: FontWeight.w600,
       color: Colors.white,
     ),
+  ),
+  floatingActionButtonTheme: FloatingActionButtonThemeData(
+    elevation: 2,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
   ),
 );

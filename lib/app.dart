@@ -1,24 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:device_preview/device_preview.dart';
-import 'package:provider/provider.dart';
 
-import 'theme/app_theme.dart';
-import 'theme/theme_provider.dart';
-import 'screens/home_screen.dart';
+import 'core/theme/app_theme.dart';
+import 'core/theme/theme_provider.dart';
+import 'core/router/app_router.dart';
 
 /// Main Application Widget
 ///
-/// Integrates with DevicePreview for proper simulation:
-/// - locale: DevicePreview.locale(context) - Enables locale switching
-/// - builder: DevicePreview.appBuilder - Wraps app in device frame
-class MyApp extends StatelessWidget {
+/// Integrates:
+/// - DevicePreview for proper device simulation
+/// - Riverpod for state management
+/// - GoRouter for declarative navigation
+/// - Material 3 theming
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final themeProvider = Provider.of<ThemeProvider>(context);
+  Widget build(BuildContext context, WidgetRef ref) {
+    final router = ref.watch(appRouterProvider);
+    final themeMode = ref.watch(themeProvider);
 
-    return MaterialApp(
+    return MaterialApp.router(
       // 🎯 CRITICAL: DevicePreview Integration
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
@@ -29,9 +32,10 @@ class MyApp extends StatelessWidget {
       // Theme Configuration
       theme: lightTheme,
       darkTheme: darkTheme,
-      themeMode: themeProvider.themeMode,
+      themeMode: themeMode,
 
-      home: const HomeScreen(),
+      // GoRouter Configuration
+      routerConfig: router,
     );
   }
 }
