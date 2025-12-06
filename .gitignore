@@ -1,0 +1,85 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# VS Code
+# Ignore the entire .vscode folder EXCEPT launch.json (run configurations for flavors)
+.vscode/
+!.vscode/launch.json
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+.packages
+/build/
+/coverage/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android related
+.gradle/
+/android/app/debug
+/android/app/profile
+/android/app/release
+/android/app/generated/
+android/key.jks
+android/local.properties
+**/local.properties
+
+# iOS/macOS related
+**/DerivedData/
+**/Pods/
+**/.symlinks/
+**/xcuserdata/
+
+# Web related
+lib/generated_plugin_registrant.dart
+
+# Windows related
+windows/flutter/generated_plugin_registrant.cc
+windows/flutter/generated_plugin_registrant.h
+
+# Linux related
+linux/flutter/generated_plugin_registrant.cc
+linux/flutter/generated_plugin_registrant.h
+
+# macOS related
+macos/Flutter/GeneratedPluginRegistrant.swift
+
+# Environment files (may contain secrets)
+.env
+.env.local
+.env.*.local
+
+# Test coverage
+coverage/
+test/coverage/
+
+# Firebase related (if using)
+.firebase/
+firebase-debug.log
