@@ -51,6 +51,10 @@ class CacheKeys {
   /// Notification enabled flag
   static const String notificationsEnabled = 'notifications_enabled';
 
+  /// HyperConsole favorite routes (JSON array of route strings)
+  static const String hyperConsoleFavoriteRoutes =
+      'hyper_console_favorite_routes';
+
   // ========================================================================
   // CACHE METADATA
   // ========================================================================

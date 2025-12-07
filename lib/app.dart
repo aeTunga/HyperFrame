@@ -11,8 +11,9 @@ import 'core/router/app_router.dart';
 /// Integrates:
 /// - DevicePreview for proper device simulation
 /// - Riverpod for state management
-/// - GoRouter for declarative navigation
+/// - GoRouter for declarative navigation with ShellRoute for HyperConsole
 /// - Material 3 theming
+/// - HyperConsole debug overlay (debug mode only, injected via ShellRoute)
 class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
@@ -24,7 +25,10 @@ class MyApp extends ConsumerWidget {
     return MaterialApp.router(
       // 🎯 CRITICAL: DevicePreview Integration
       locale: DevicePreview.locale(context),
-      builder: DevicePreview.appBuilder,
+      builder: (context, child) {
+        // HyperConsole button injected via ShellRoute in router
+        return DevicePreview.appBuilder(context, child);
+      },
 
       title: 'HyperFrame',
       debugShowCheckedModeBanner: false,
@@ -34,7 +38,7 @@ class MyApp extends ConsumerWidget {
       darkTheme: darkTheme,
       themeMode: themeMode,
 
-      // GoRouter Configuration
+      // GoRouter Configuration (includes HyperConsole via ShellRoute)
       routerConfig: router,
     );
   }
